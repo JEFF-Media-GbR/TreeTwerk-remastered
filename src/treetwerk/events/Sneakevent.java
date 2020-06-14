@@ -43,11 +43,20 @@ public class Sneakevent implements Listener
                     	if (newtwerk >= 5)
                     	{
                             TreeType type = null;
+                            
                             if (block.getType().toString().equalsIgnoreCase("OAK_SAPLING"))
                                 type = TreeType.TREE;
+
+                            if (block.getType().toString().equalsIgnoreCase("DARK_OAK_SAPLING"))
+                                type = TreeType.DARK_OAK;
+                            
                             block.setType(Material.AIR);
                             block.getWorld().generateTree(block.getLocation(), type); 
                             TwerkCount.remove(block);
+                            if(block.getType().equals(Material.AIR))
+                            {
+                            	block.setType(Material.OAK_SAPLING);
+                            }
                     	}
                     	else
                     		TwerkCount.put(block, newtwerk);
