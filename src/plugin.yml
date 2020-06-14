@@ -1,0 +1,6 @@
+name: opStats
+authors: [RaiTaki]
+dev-url: http://github.com/Chereza/TreeTwerk-remastered
+main: treetwerk.main.main
+version: 0.0.1
+api-version: 1.15
