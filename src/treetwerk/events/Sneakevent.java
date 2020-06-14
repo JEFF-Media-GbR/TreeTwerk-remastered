@@ -44,18 +44,44 @@ public class Sneakevent implements Listener
                     	{
                             TreeType type = null;
                             
-                            if (block.getType().toString().equalsIgnoreCase("OAK_SAPLING"))
+                            if (block.getType().equals(Material.OAK_SAPLING))
                                 type = TreeType.TREE;
-
-                            if (block.getType().toString().equalsIgnoreCase("DARK_OAK_SAPLING"))
-                                type = TreeType.DARK_OAK;
+                            
+                            if (block.getType().equals(Material.SPRUCE_SAPLING))
+                            	type = TreeType.REDWOOD;
+                            
+                            
+                            if (block.getType().equals(Material.JUNGLE_SAPLING))
+                                type = TreeType.SMALL_JUNGLE;
+                            
+                            
+                            if (block.getType().equals(Material.BIRCH_SAPLING))
+                                type = TreeType.BIRCH;
+                            
+                            
+                            if (block.getType().equals(Material.ACACIA_SAPLING))
+                                type = TreeType.ACACIA;
                             
                             block.setType(Material.AIR);
                             block.getWorld().generateTree(block.getLocation(), type); 
                             TwerkCount.remove(block);
+
                             if(block.getType().equals(Material.AIR))
                             {
-                            	block.setType(Material.OAK_SAPLING);
+                            	if (type.equals(TreeType.TREE))
+                            		block.setType(Material.OAK_SAPLING);
+                            		
+                            		
+                            	if (type.equals(TreeType.ACACIA))
+                            		block.setType(Material.ACACIA_SAPLING);
+                            	
+                            	
+                            	else if (type.equals(TreeType.JUNGLE))
+                            		block.setType(Material.JUNGLE_SAPLING);
+                            	
+                            	
+                            	if(type.equals(TreeType.BIRCH))
+                            		block.setType(Material.BIRCH_SAPLING);
                             }
                     	}
                     	else
