@@ -37,17 +37,17 @@ public class main extends JavaPlugin {
 
     public void onEnable()
     {        
-        Bukkit.getPluginManager().registerEvents(new treetwerk.events(), this);
+        Bukkit.getPluginManager().registerEvents(new treetwerk.events.Sneakevent(), this);
        
         
-        getLogger().info(ChatColor.DARK_PURPLE + "opMenu'nün komutlarý ve eventleri kaydedildi!");
+        getLogger().info(ChatColor.DARK_PURPLE + "TreeTwerk komutlarý ve eventleri kaydedildi!");
 
-        getLogger().info(ChatColor.DARK_PURPLE + "opMenu plugini aktifleþtirildi!");
+        getLogger().info(ChatColor.DARK_PURPLE + "TreeTwerk plugini aktifleþtirildi!");
     }
 
     public void onDisable()
     {    	
-        getLogger().info(ChatColor.DARK_PURPLE + "opMenu plugini kapatýldý!");
+        getLogger().info(ChatColor.DARK_PURPLE + "TreeTwerk plugini kapatýldý!");
     }
 	
 }
