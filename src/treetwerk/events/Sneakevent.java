@@ -1,5 +1,7 @@
 package treetwerk.events;
 
+import java.util.HashMap;
+
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Tag;
@@ -11,7 +13,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.material.Sapling;
 
-public class Sneakevent implements Listener {
+public class Sneakevent implements Listener 
+{
+	
+	public HashMap<Block, Integer> TwerkCount = new HashMap<Block, Integer>();
 
 	@EventHandler
 	public void PlayerEvent(PlayerToggleSneakEvent e) 
@@ -31,11 +36,23 @@ public class Sneakevent implements Listener {
                     Block block = player.getWorld().getBlockAt(x, y, z);
                     if (Tag.SAPLINGS.isTagged(block.getType())) 
                     {
-                        TreeType type = null;
-                        if (block.getType().toString().equalsIgnoreCase("OAK_SAPLING"))
-                            type = TreeType.TREE;
-                        block.setType(Material.AIR);
-                        block.getWorld().generateTree(block.getLocation(), type);
+                    	if (!TwerkCount.containsKey(block))
+                    		TwerkCount.put(block, 0);
+                    	
+                    	int newtwerk = TwerkCount.get(block) + 1; 
+                    	if (newtwerk >= 5)
+                    	{
+                            TreeType type = null;
+                            if (block.getType().toString().equalsIgnoreCase("OAK_SAPLING"))
+                                type = TreeType.TREE;
+                            block.setType(Material.AIR);
+                            block.getWorld().generateTree(block.getLocation(), type); 
+                            TwerkCount.remove(block);
+                    	}
+                    	else
+                    		TwerkCount.put(block, newtwerk);
+                    	
+
                     }
                 }
             }
