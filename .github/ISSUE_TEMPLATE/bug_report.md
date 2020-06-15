@@ -26,8 +26,8 @@ If applicable, add screenshots to help explain your problem.
 **Desktop (please complete the following information):**
  - Installed plugins: [e.g. Citizen, EssentialsX]
  - Server software: [e.g. Paperspigot, Spigot, TacoSpigot]
- - Server Version [e.g. 1.14.4, 1.15.2]
- - Plugin Version [e.g 0.1.0, 0.1.1]
+ - Server Version: [e.g. 1.14.4, 1.15.2]
+ - Plugin Version: [e.g 0.1.0, 0.1.1]
 
 **Additional context**
 Add any other context about the problem here.
