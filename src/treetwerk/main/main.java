@@ -32,7 +32,9 @@ public class main extends JavaPlugin {
     public void onLoad() 
     {
         instance = this;
-   
+        
+        treetwerk.main.ConfigFolder config = new treetwerk.main.ConfigFolder();
+        config.ReadFile();
     } 
 
     public void onEnable()

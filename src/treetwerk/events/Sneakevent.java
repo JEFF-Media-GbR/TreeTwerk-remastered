@@ -12,9 +12,10 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 
+import treetwerk.main.ConfigFolder;
+
 public class Sneakevent implements Listener 
 {
-	
 	public HashMap<Block, Integer> TwerkCount = new HashMap<Block, Integer>();
 
 	@EventHandler
@@ -83,7 +84,7 @@ public class Sneakevent implements Listener
     		TwerkCount.put(block, 0);
     	
     	int newtwerk = TwerkCount.get(block) + 1; 
-    	if (newtwerk >= 5)
+    	if (newtwerk >= ConfigFolder.TwerkConfig.get("RequiredTwerkCount"))
     	{
             block.setType(Material.AIR);
             block.getWorld().generateTree(block.getLocation(), type); 
