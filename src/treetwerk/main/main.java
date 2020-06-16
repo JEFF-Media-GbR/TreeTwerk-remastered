@@ -40,16 +40,17 @@ public class main extends JavaPlugin {
     public void onEnable()
     {        
         Bukkit.getPluginManager().registerEvents(new treetwerk.events.Sneakevent(), this);
-       
-        
-        getLogger().info(ChatColor.DARK_PURPLE + "TreeTwerk komutlarý ve eventleri kaydedildi!");
+        registerCommands(new String[]{ "TreeTwerk" }, new treetwerk.main.Commands());
 
-        getLogger().info(ChatColor.DARK_PURPLE + "TreeTwerk plugini aktifleþtirildi!");
+        
+        getLogger().info(ChatColor.DARK_PURPLE + "TreeTwerk is enabling!");
+
+        getLogger().info(ChatColor.DARK_PURPLE + "TreeTwerk is enabled!");
     }
 
     public void onDisable()
     {    	
-        getLogger().info(ChatColor.DARK_PURPLE + "TreeTwerk plugini kapatýldý!");
+        getLogger().info(ChatColor.DARK_PURPLE + "TreeTwerk disabled!");
     }
 	
 }
