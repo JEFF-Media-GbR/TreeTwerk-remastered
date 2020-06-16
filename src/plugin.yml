@@ -2,5 +2,9 @@ name: TreeTwerk
 authors: [RaiTaki, Cazcez]
 dev-url: http://github.com/Chereza/TreeTwerk-remastered
 main: treetwerk.main.main
-version: 0.0.1
-api-version: 1.15
+version: 0.1.2
+api-version: 1.13
+
+commands:
+  TreeTwerk:
+    description: it does what it needs to do
