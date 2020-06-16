@@ -88,11 +88,6 @@ public class Sneakevent implements Listener {
 		return saplings;
 
 	}
-	
-	private boolean isFourSaplings(Block block) {
-		
-		return false;
-	}
 
 	private TreeType getTreeType(Block block) {
 		switch(block.getType()) {
